@@ -5,9 +5,10 @@ public:
         
         for(int j=0; j<nums.size(); j++) {
             if(nums[j] != 0) {
-                int temp = nums[j];
-                nums[j] = nums[i];
-                nums[i] = temp;
+                // int temp = nums[j];
+                // nums[j] = nums[i];
+                // nums[i] = temp;
+                swap(nums[j], nums[i]);
                 i++;
             }   
         } 
