@@ -9,13 +9,13 @@
  * }
  */
 class Solution {
-    public ListNode partition(ListNode head, int x) {
+    public ListNode partition(ListNode head, int x) { 
         ListNode headCopy = head;
         ListNode h = null;
         ListNode t = null;
         
         while (headCopy!=null) {
-            ListNode l = new ListNode(headCopy.val);
+            ListNode l = new ListNode(headCopy.val); 
             if (l.val < x) {
                 l.next = h;
                 h = l;
@@ -28,18 +28,17 @@ class Solution {
         }
         head=null;
         while (t!=null) {
-            ListNode l = new ListNode(t.val);
+            ListNode l = new ListNode(t.val); 
             l.next=head;
             head = l;
             t = t.next;
         }
         while (h!=null) {
-            ListNode l = new ListNode(h.val);
+            ListNode l = new ListNode(h.val); 
             l.next=head;
             head = l;
             h = h.next;
         }
-        
         return head;
     }
 }
