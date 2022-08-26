@@ -12,14 +12,13 @@ class Solution {
 //         return dp[n] = fib(n-1) + fib(n-2);
         
         // Tabulation TechniQue!!
-        if (n <= 1) 
-            return n;
-        int numP2 = 0, numP = 1;
+        if (n <= 1)  return n;
+        int prev = 1, curr = 1;
         for(int i=2; i<=n; i++){
-            int currI = numP + numP2;
-            numP2 = numP;
-            numP = currI;
+            int next = prev + curr;
+            prev = curr;
+            curr = next;
         }
-        return numP;
+        return prev;
     }
 }
