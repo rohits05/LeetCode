@@ -1,11 +1,12 @@
 class Solution {
     public boolean canJump(int[] nums) {
-        int LastGoodIdxPosiT = nums.length-1;
+        int n = nums.length; 
+        int maker = 0;
         
-        for(int i=nums.length-1; i>=0; i--){
-            if(i+nums[i] >= LastGoodIdxPosiT)
-                LastGoodIdxPosiT = i;
+        for(int i=0; i<n; i++){
+            if(maker < i) return false;
+            maker = Math.max(maker, i+nums[i]);
         }
-        return (LastGoodIdxPosiT == 0);
+        return true;
     }
 }
