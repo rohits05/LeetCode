@@ -31,5 +31,13 @@
 </ul>
 
 <p style="user-select: auto;">&nbsp;</p>
-<p style="user-select: auto;"><strong style="user-select: auto;">Follow up:</strong> If you have figured out the <code style="user-select: auto;">O(n)</code> solution, try coding another solution using the <strong style="user-select: auto;">divide and conquer</strong> approach, which is more subtle.</p>
+<p style="user-select: auto;"><strong style="user-select: auto;">Follow up:</strong> If you have figured out the <code style="user-select: auto;">O(n)</code> solution, try coding another solution using the <strong style="user-select: auto;"><lclighter data-id="lgt257187248" data-bundle-id="0" style="background-image: linear-gradient(transparent 0%, transparent calc(50% - 4px), rgb(204, 242, 241) calc(50% - 4px), rgb(204, 242, 241) 100%); transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s; background-size: 100% 200%; background-position: initial; user-select: auto;">divide and conquer</lclighter><div class="LinerThreadIcon LinerFirst " data-highlight-id="257187248" data-bundle-id="0" id="lgt257187248" style="background-image: url(&quot;https://photo.getliner.com/liner-service-bucket/user_photo_default/color-8/S.svg&quot;); user-select: auto;">
+        <div class="LinerThreadIcon__dim" style="user-select: auto;"></div>
+        <div class="LinerThreadIcon__mentioned" style="user-select: auto;">
+          <div class="LinerThreadIcon__mentionedImg" style="user-select: auto;"></div>
+        </div>
+        <div class="LinerThreadIcon__onlyMe" style="user-select: auto;">
+          <div class="LinerThreadIcon__onlyMeImg" style="user-select: auto;"></div>
+        </div>
+      </div></strong> approach, which is more subtle.</p>
 </div>
