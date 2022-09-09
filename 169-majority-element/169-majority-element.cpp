@@ -2,13 +2,12 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         // Moore Voting Algo
-        int els =0, cnt =0;
-        for(int item: nums){
-            if(cnt == 0) els = item;
-            
-            if(item == els) cnt +=1;
+        int cnt =0, candy =0;
+        for(auto items: nums){
+            if(cnt ==0) candy = items;
+            if(items == candy) cnt +=1;
             else cnt -=1;
         }
-        return els;
+        return candy;
     }
 };
