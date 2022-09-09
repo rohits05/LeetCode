@@ -1,10 +1,12 @@
 class Solution {
-    public List<Integer> majorityElement(int[] nums) {
-        int n = nums.length;
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        int n = nums.size();
         
-        List<Integer> res = new ArrayList<Integer>();
-        if (nums == null || n == 0)
-		    return res;
+        // List<Integer> res = new ArrayList<Integer>();
+        vector<int> res;
+        // if (nums == NULL || n == 0)
+		    // return res;
 
         int n1 = nums[0], n2 = nums[0], c1 = 0, c2 = 0;
         
@@ -22,9 +24,9 @@ class Solution {
         }
         
         if(c1 > n/3)
-            res.add(n1);
+            res.push_back(n1);
         if(c2 > n/3)
-            res.add(n2);
+            res.push_back(n2);
         return res;
     }
-}
+};
