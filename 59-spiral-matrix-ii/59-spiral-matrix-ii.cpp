@@ -1,6 +1,7 @@
 class Solution {
-    public int[][] generateMatrix(int n) {
-        int res[][] = new int[n][n];
+public:
+    vector<vector<int>> generateMatrix(int n) {
+        vector<vector<int>> res(n, vector<int>(n));
         
         int rB =0, cB =0, cnt =1;
         int rE =n-1, cE =n-1;
@@ -28,4 +29,4 @@ class Solution {
         }
         return res;
     }
-}
+};
