@@ -19,12 +19,12 @@ class Solution {
     }
     
     public TreeNode sortedArrayToBST(int[] nums, int lo, int hi) {
-        if(lo > hi)
-            return null;
-        int mid = (hi-lo)/2+lo;
+        if(lo > hi)  return null;
+        
+        int mid = (hi-lo)/2 + lo;
         TreeNode root = new TreeNode(nums[mid]);
-        root.left =  sortedArrayToBST(nums, lo, mid-1);
-        root.right =  sortedArrayToBST(nums, mid+1, hi);
+        root.left = sortedArrayToBST(nums, lo, mid-1);
+        root.right = sortedArrayToBST(nums, mid+1, hi);
         return root;
     }
 }
