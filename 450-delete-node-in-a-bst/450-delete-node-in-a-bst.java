@@ -15,9 +15,9 @@
  */
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
-        if (root == null) return null;
+        if(root == null) return null;
         
-        if (root.val == key) return helper(root);
+        if(root.val == key) return helper(root);
         
         TreeNode dummy = root;
         while(root != null){
