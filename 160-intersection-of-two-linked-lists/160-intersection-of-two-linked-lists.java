@@ -21,7 +21,6 @@ public class Solution {
             ducky1 = ducky1 == null ? headB : ducky1.next;
             ducky2 = ducky2 == null ? headA : ducky2.next;
         }
-        
         return ducky1;   
     }
 }
