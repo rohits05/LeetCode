@@ -14,14 +14,21 @@
  * }
  */
 class Solution {
+    public void preHelper(TreeNode root, List<Integer> pre){
+        if(root == null) return;
+        pre.add(root.val);
+        preHelper(root.left, pre);
+        preHelper(root.right, pre);
+    }
     public List<Integer> preorderTraversal(TreeNode root) {
         // Recursive Approach !!
         List<Integer> pre = new LinkedList<Integer>();
-        if(root == null) return pre;
+        // if(root == null) return pre;
         
-        pre.add(root.val);
-        pre.addAll(preorderTraversal(root.left));
-        pre.addAll(preorderTraversal(root.right));
+        preHelper(root, pre);
+        // pre.add(root.val);
+        // pre.addAll(preorderTraversal(root.left));
+        // pre.addAll(preorderTraversal(root.right));
         return pre;
                    
         // Iterative Approach !!
