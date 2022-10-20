@@ -14,13 +14,23 @@
  * }
  */
 class Solution {
-     ArrayList<Integer> list = new ArrayList<>();
+    public void helper(TreeNode root,List<Integer> post){
+        if(root == null) return;
+        
+        helper(root.left, post);
+        helper(root.right, post);
+        post.add(root.val);
+    }
+    
+    ArrayList<Integer> list = new ArrayList<>(); // 1,2
     public List<Integer> postorderTraversal(TreeNode root) {
         // recuRsive Approach !! 
-        if(root == null) return list;
-        postorderTraversal(root.left);
-        postorderTraversal(root.right);
-        list.add(root.val);
+        // if(root == null) return list; # 1
+        // postorderTraversal(root.left); # 1
+        // postorderTraversal(root.right); #1
+        // list.add(root.val);  # 1
+        
+        helper(root, list);
         return list;
         
 //         List<Integer> trav = new ArrayList<Integer>();
