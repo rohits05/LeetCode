@@ -15,5 +15,6 @@ select product_id, 'store3' as store,
         store3 as price 
 from Products
 where store3  is not NULL
+-- where store1 is not null, store2 is not null,  store3 is not null
 
 order by 1,2 asc;
