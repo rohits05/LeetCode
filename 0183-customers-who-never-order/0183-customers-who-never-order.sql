@@ -2,5 +2,5 @@
 select name as Customers from Customers
 -- where id not in(select customerId from orders)
 left join Orders
-            on Orders.CustomerId = Customers.id
-where Orders.CustomerId is null
+          on Orders.customerId = Customers.id
+where Orders.customerId is null
