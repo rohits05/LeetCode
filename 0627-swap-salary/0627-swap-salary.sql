@@ -1,9 +1,10 @@
 # Write your MySQL query statement below
-update salary 
-set sex = if(sex like 'f%', 'm%', 'f%')
-# UPDATE Salary
-# SET sex = 
-# CASE
-#     WHEN sex = "f" THEN "m"
-#     WHEN sex = "m" THEN "f"
-# END
+# update salary 
+# set sex = if(sex like 'f%', 'm%', 'f%')
+
+# Using Case Statement!
+update Salary
+set sex = 
+        case when sex like 'f%' then 'm%'
+        when sex like 'm%' then 'f%' 
+        end
