@@ -3,9 +3,10 @@
 # IF (employee_id%2
 #     AND name not like "M%", salary, 0) 
 #     as bonus
-SELECT employee_id, 
-            CASE WHEN employee_id%2=1 
-            AND name NOT LIKE 'M%' 
-            THEN salary ELSE 0 END bonus 
-            -- SQL dosen't have if() method
-FROM Employees ORDER BY 1
+select employee_id, 
+       if (employee_id % 2 = 1
+       and name not like 'M%', salary, 0)
+       as bonus
+from Employees
+order by 1;
+ 
