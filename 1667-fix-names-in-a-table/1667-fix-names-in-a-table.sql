@@ -1,4 +1,4 @@
 # Write your MySQL query statement below
-SELECT user_id, CONCAT(UPPER(LEFT(name,1)),LOWER(RIGHT(name,LENGTH(name)-1))) AS name -- Using concat method with specific index pos to get the desired left & right chars
-FROM Users
-ORDER BY user_id ASC-- sorting in ascending order ASC | DESC |
+select user_id, concat(upper(left(name,1)),lower(right(name,length(name)-1))) as name -- Using concat method with specific index pos to get the desired left & right chars
+from Users
+order by 1;-- sorting in ascending order ASC | DESC |
