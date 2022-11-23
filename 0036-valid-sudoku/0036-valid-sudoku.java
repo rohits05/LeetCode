@@ -6,7 +6,7 @@ class Solution {
                 if(board[i][j] != '.'){
                      if(!view.add("row" + i + board[i][j]) 
                         || !view.add("column" + j + board[i][j]) 
-                        || !view.add("box" + (i/3)+j/3 + board[i][j]))  return false;
+                        || !view.add("box" + (i/3)*3+j/3 + board[i][j]))  return false;
                 }        
             } 
         }
