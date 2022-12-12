@@ -1,6 +1,6 @@
 class Solution {
     public int climbStairs(int n) {
-        if (n <= 1) return 1;
+        if(n <= 1) return 1;
         // Tabulation TechniQue!!
         int dp[] = new int[n+1];
         dp[1] =1; dp[2] =2;
