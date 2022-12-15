@@ -16,7 +16,6 @@ class Solution {
                     dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1] + 2, dp[i - 1][j] + 1), dp[i][j - 1] + 1);
             }
         }
-        
         return dp[len1][len2];
     }
 }
