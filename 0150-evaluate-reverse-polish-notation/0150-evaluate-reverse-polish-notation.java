@@ -8,9 +8,9 @@ class Solution {
                 int num1 = stack.pop();
                 int num2 = stack.pop();
                 if(tokens[i].equals("+")) stack.push(num2 + num1);
-                else if(tokens[i].equals("-"))stack.push(num2 - num1);
-                else if(tokens[i].equals("*"))stack.push(num2 * num1);
-                else if(tokens[i].equals("/"))stack.push(num2 / num1);
+                else if(tokens[i].equals("-")) stack.push(num2 - num1);
+                else if(tokens[i].equals("*")) stack.push(num2 * num1);
+                else if(tokens[i].equals("/")) stack.push(num2 / num1);
             }else stack.push(Integer.valueOf(tokens[i]));
         }
         return stack.peek();
