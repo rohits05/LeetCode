@@ -5,8 +5,7 @@ class Solution {
         String operators = "+-*/";
         for(int i=0; i<tokens.length; i++){
             if(operators.contains(tokens[i])){
-                int num1 = stack.pop();
-                int num2 = stack.pop();
+                int num1 = stack.pop(), num2 = stack.pop();
                 if(tokens[i].equals("+")) stack.push(num2 + num1);
                 else if(tokens[i].equals("-")) stack.push(num2 - num1);
                 else if(tokens[i].equals("*")) stack.push(num2 * num1);
