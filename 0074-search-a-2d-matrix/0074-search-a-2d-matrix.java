@@ -7,10 +7,10 @@ class Solution {
 //         }
 //         return false;
         
-        // T-P meThoD !!
-        int i = 0, j = matrix[0].length - 1;
+        // T-P!
+        int i =0, j =matrix[0].length - 1;
             while(i < matrix.length && j >= 0) {
-                    if(matrix[i][j] == target)  return true;
+                    if(matrix[i][j] == target) return true;
                     else if(matrix[i][j] > target) j--;
                     else i++;
                 } 
