@@ -1,16 +1,13 @@
 class Solution {
     public void rotate(int[] nums, int k) {
-        
         // Approach 1
 //         int temp[] = nums.clone();
-//         k = k % nums.length;
-        
+//         k = k % nums.length;   
 //         for(int i=0; i<nums.length; i++){
 //             nums[(i+k) % nums.length] = temp[i];
 //         }
-        
-        
-        // Another Approach
+            
+        // OpTimizeD Approach
         int n = nums.length;
         k = k % n;
         reverse(nums, 0, n-1); 
@@ -19,11 +16,10 @@ class Solution {
     }
     
      public void reverse(int[] nums, int start, int end){
-        while(start < end){
-            
+        while(start < end){  
             int temp = nums[start]; 
             nums[start] = nums[end]; 
-            nums[end]=temp; 
+            nums[end] = temp; 
             start++; end--; 
         }
     }
