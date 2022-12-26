@@ -7,9 +7,11 @@ class Solution {
         
 //         if(nums[nums.length-1] > nums[0]) check++;
 //         return (check <= 1);
+        
+        // Optimized !!
         int cnt = 0, n = nums.length;
-        for(int i=1; i<n; i++) if(nums[i-1] > nums[i]) cnt++;
-        if(nums[n-1] > nums[0]) cnt++;
+        for(int i=1; i<=n; i++) if(nums[i-1] > nums[i%n]) cnt++;
+        // if(nums[n-1] > nums[0]) cnt++;
         if(cnt > 1) return false;
         return true;
     }
