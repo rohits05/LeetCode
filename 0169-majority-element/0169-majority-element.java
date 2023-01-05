@@ -1,6 +1,6 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        // Moore Voting Algo
+        // Moore Voting Algo!
         int els =0, cnt =0;
         for(int item: nums){
             if(cnt == 0) els = item;
