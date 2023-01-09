@@ -5,12 +5,12 @@ class Solution {
         
         for(int i=0; i<col; i++){   
             int j = 0, k = i;
-            boolean check=false;
+            boolean check =false;
             
             while(j<row && k<col){
                 if(grid[j][k] == 1){
                     if((k < col-1 && grid[j][k+1] == -1)  || (k == col-1 && grid[j][k] == 1)){
-                        check=true;
+                        check =true;
                         break;
                     }
                     k++;
