@@ -17,13 +17,9 @@ class Solution {
             } else{
                 // If both target and the mid number are present in the same half,
                 //   do a normal binary search.
-                if(nums[mid] == target){
-                    return mid;
-                }else if (target < nums[mid]){
-                    end = mid - 1;
-                }else{
-                    start = mid + 1;
-                }
+                if(nums[mid] == target) return mid;
+                else if(target < nums[mid]) end = mid - 1;
+                else start = mid + 1;
             } 
         }
         return -1;      
