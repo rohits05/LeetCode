@@ -6,7 +6,8 @@ class Solution {
 		int i =0;
         
 		while(i<intervals.length){
-			int s1=intervals[i][0], e1=intervals[i][1], s2=newInterval[0], e2=newInterval[1];
+			int s1 =intervals[i][0], e1 =intervals[i][1], 
+            s2 =newInterval[0], e2 =newInterval[1];
 			if(s1>e2){
 			   List<Integer> temp=new ArrayList<>();
 			   temp.add(newInterval[0]);temp.add(newInterval[1]);
