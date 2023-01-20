@@ -41,12 +41,12 @@ class Solution {
         TreeNode node = root;
         
         while(node != null || !pickup.isEmpty() ){
-          if(node != null ){
+          if(node != null){
               pickup.push(node);
               node = node.left;    
           }else{
               TreeNode temp = pickup.peek().right;
-              if(temp == null ){
+              if(temp == null){
                   temp = pickup.pop();
                   trav.add(temp.val);
                   
