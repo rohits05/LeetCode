@@ -29,14 +29,12 @@ class Solution {
         // postorderTraversal(root.left); # 1
         // postorderTraversal(root.right); #1
         // list.add(root.val);  # 1
-        
         // helper(root, list); # 2
         // return list;  # 1,2
         
         // IteRaTive appRoach !!
         List<Integer> trav = new ArrayList<Integer>();
         Stack<TreeNode> pickup = new Stack<TreeNode>();
-        
         if(root == null) return trav;
         TreeNode node = root;
         
@@ -57,6 +55,7 @@ class Solution {
               }else node = temp;   
           }      
         }
+        
         return trav;
     }
 }
