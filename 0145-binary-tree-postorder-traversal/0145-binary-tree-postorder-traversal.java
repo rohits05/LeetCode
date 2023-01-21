@@ -32,10 +32,12 @@ class Solution {
         // helper(root, list); # 2
         // return list;  # 1,2
         
-        // IteRaTive appRoach !!
+        // IteRaTive appRoach (1 Stack) !!
         List<Integer> trav = new ArrayList<Integer>();
         Stack<TreeNode> pickup = new Stack<TreeNode>();
+        // Stack<TreeNode> pickup2 = new Stack<TreeNode>();
         if(root == null) return trav;
+        // pickup.push(root);
         TreeNode node = root;
         
         while(node != null || !pickup.isEmpty() ){
@@ -55,6 +57,15 @@ class Solution {
               }else node = temp;   
           }      
         }
+        // while(!pickup.isEmpty()){
+        //     root = pickup.pop();
+        //     pickup2.add(root);
+        //     if(root.left != null) pickup.push(root.left);
+        //     if(root.right != null) pickup.push(root.right);
+        // }
+        // while(!pickup2.isEmpty()){
+        //     trav.add(pickup2.pop().val);
+        // }
         
         return trav;
     }
