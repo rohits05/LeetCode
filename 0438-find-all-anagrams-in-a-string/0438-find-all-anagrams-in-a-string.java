@@ -4,7 +4,7 @@ class Solution {
         int[] arr = new int[26];
         for(int i=0; i<p.length(); i++) arr[p.charAt(i) - 'a']++;
         
-        for(int i=0; i<=s.length()-p.length(); i++) {
+        for(int i=0; i<=s.length()-p.length(); i++){
             String temp = s.substring(i, p.length()+i);
             int[] arr1 = new int[26];
             
