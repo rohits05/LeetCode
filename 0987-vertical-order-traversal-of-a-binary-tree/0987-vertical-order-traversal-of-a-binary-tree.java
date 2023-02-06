@@ -36,7 +36,6 @@ class Solution {
             TreeNode node = tuple.node; 
             int x = tuple.row, y = tuple.col; 
             
-            
             if(!map.containsKey(x)) map.put(x, new TreeMap<>());
             if(!map.get(x).containsKey(y)) map.get(x).put(y, new PriorityQueue<>());
             map.get(x).get(y).offer(node.val);
@@ -48,7 +47,7 @@ class Solution {
         List<List<Integer>> list = new ArrayList<>();
         for(TreeMap<Integer, PriorityQueue<Integer>> ys: map.values()){
             list.add(new ArrayList<>());
-            for(PriorityQueue<Integer> nodes : ys.values()){
+            for(PriorityQueue<Integer> nodes: ys.values()){
                 while(!nodes.isEmpty()) list.get(list.size() - 1).add(nodes.poll());
             }
         }
