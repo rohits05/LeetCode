@@ -1,6 +1,10 @@
 class Solution {
     public boolean canReach(int[] arr, int start) {
-        return canReachRec(start, arr, new Boolean[arr.length]);
+        // return canReachRec(start, arr, new Boolean[arr.length]);
+        if(start<0 || start>=arr.length || arr[start]<0) return false;
+        if(arr[start] == 0) return true;
+        arr[start] = -1 * arr[start];
+        return canReach(arr, start-arr[start]) || canReach(arr, start+arr[start]);
     }
     
     private boolean canReachRec(int i, int[] A, Boolean memo[]) {
