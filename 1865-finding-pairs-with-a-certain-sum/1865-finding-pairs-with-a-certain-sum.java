@@ -1,5 +1,4 @@
 class FindSumPairs {
-
     HashMap<Integer , Integer> map = new HashMap<>();
     int[] nums1; int [] nums2;
 
