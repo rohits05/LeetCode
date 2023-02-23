@@ -7,25 +7,18 @@ class Solution {
         int low = 0, mid = 0, temp;
         int high = a.length - 1;
         while(mid <= high){
-            switch(a[mid]){
-                case 0: {
+            if(a[mid] == 0){
                     temp = a[low];
                     a[low] = a[mid];
                     a[mid] = temp;
                     low++;
                     mid++;
-                    break;
-                }
-                case 1:
-                    mid++;
-                    break;
-                case 2: {
+            } else if(a[mid] == 1) mid++;
+            else{
                     temp = a[mid];
                     a[mid] = a[high];
                     a[high] = temp;
                     high--;
-                    break;
-                }
             }
         }
     }
