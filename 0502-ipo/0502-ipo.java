@@ -1,7 +1,7 @@
 class Solution {
     
     class pair {
-    int cap, pro;
+        int cap, pro;
         
         pair(int cap, int pro) {
             this.cap = cap;
@@ -14,7 +14,7 @@ class Solution {
         PriorityQueue<Integer> pq= new PriorityQueue<>((x, y) -> y-x);
         pair a[] = new pair[n];
         
-        for(int i=0; i<n; i++)a[i]=new pair(c[i], p[i]);
+        for(int i=0; i<n; i++) a[i] = new pair(c[i], p[i]);
         Arrays.sort(a, (x, y) -> x.cap - y.cap);
         
         int i =0;
