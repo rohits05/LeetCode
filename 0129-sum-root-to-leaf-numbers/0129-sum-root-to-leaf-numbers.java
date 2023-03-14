@@ -17,7 +17,8 @@ class Solution {
     public int sumNumbers(TreeNode root) {
         return helper(root, 0);
     }
-    public int helper(TreeNode root, int sum){
+    
+    public int helper(TreeNode root, int sum) {
         if(root == null) return 0;
         
         sum = (sum * 10) + root.val;
