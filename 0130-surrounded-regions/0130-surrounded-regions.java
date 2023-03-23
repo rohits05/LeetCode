@@ -1,8 +1,8 @@
-public class Solution {
-  public void solve(char[][] board) {
-        if(board.length <= 2 || board[0].length <= 2) return;
-
+class Solution {
+    public void solve(char[][] board) {
         int row = board.length, col = board[0].length;
+        if(row <= 2 || col <= 2) return;
+
         for(int i=0; i<row; i++) {
             if(board[i][0] == 'O') dfs(board, i, 0);    
             if(board[i][col - 1] == 'O') dfs(board, i, col - 1);    
