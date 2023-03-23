@@ -12,7 +12,6 @@ class Solution {
 
         int findUP(int node){
             if(node == parent.get(node)) return node;
-
             int up = findUP(parent.get(node));
             parent.set(node, up);
             return up;
