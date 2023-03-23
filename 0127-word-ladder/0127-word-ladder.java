@@ -1,16 +1,44 @@
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        if(wordList == null || wordList.size() == 0) return 0;
+//         if(wordList == null || wordList.size() == 0) return 0;
 
-        Set<String> dict = new HashSet<>(wordList);
-        if(!dict.contains(endWord)) return 0;
+//         Set<String> dict = new HashSet<>(wordList);
+//         if(!dict.contains(endWord)) return 0;
 
-        Set<String> startSet = new HashSet<>();
-        startSet.add(beginWord);
-        Set<String> endSet = new HashSet<>();
-        endSet.add(endWord);
+//         Set<String> startSet = new HashSet<>();
+//         startSet.add(beginWord);
+//         Set<String> endSet = new HashSet<>();
+//         endSet.add(endWord);
 
-        return bfs(startSet, endSet, dict, 1);
+//         return bfs(startSet, endSet, dict, 1);
+        
+        // OpTimized!!
+        Set<String> set = new HashSet<>(wordList);
+        Queue<String> q = new LinkedList<>();
+        q.offer(beginWord);
+        
+        int step = 1;
+        while(!q.isEmpty()){
+            int size = q.size();
+            for(int j=0; j<size; j++){
+                String cur = q.poll();
+                for(int i=0; i<endWord.length(); i++){
+                    for(char letter='a'; letter<='z'; letter++){ 
+                        StringBuilder newWord = new StringBuilder(cur);
+                        newWord.setCharAt(i, letter);
+                        if(set.contains(newWord.toString())){
+                            if(newWord.toString().equals(endWord)) return step + 1;
+                            set.remove(newWord.toString());
+                            q.offer(newWord.toString());
+                        }
+                    }
+                }
+
+            }
+            step++;
+        }
+    
+        return 0;
     }
 
     private int bfs(Set<String> startSet, Set<String> endSet, Set<String> dict, int level) {
