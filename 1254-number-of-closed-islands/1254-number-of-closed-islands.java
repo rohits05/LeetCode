@@ -3,7 +3,7 @@ class Solution {
         if(i<0 || i>=m || j<0 || j>=n) return false;
 
         if(grid[i][j] == 1) return true;
-        grid[i][j] = 1;
+        grid[i][j] =1;
         
         boolean up = dfs(grid, i-1, j, m, n);
         boolean down = dfs(grid, i+1, j, m, n);
