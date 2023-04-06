@@ -1,4 +1,5 @@
 class Solution {
+    // Dynmaic Disjoint D.S!!
     static class DisjointSet{
         List<Integer> size = new ArrayList<>();
         List<Integer> parent = new ArrayList<>();
@@ -41,9 +42,8 @@ class Solution {
         }
         
         int component = 0;
-        for(int i=0; i<n; i++){
+        for(int i=0; i<n; i++)
             if(ds.parent.get(i) == i) component++;
-        }
         
         int ans = component-1;
         if(extra < ans) return -1;
