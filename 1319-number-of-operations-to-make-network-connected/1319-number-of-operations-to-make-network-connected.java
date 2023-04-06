@@ -1,24 +1,24 @@
 class Solution {
     // Dynmaic Disjoint D.S!!
-    static class DisjointSet{
+    static class DisjointSet {
         List<Integer> size = new ArrayList<>();
         List<Integer> parent = new ArrayList<>();
         
-        public DisjointSet(int n){
+        public DisjointSet(int n) {
             for(int i=0; i<n; i++){
                 size.add(1);
                 parent.add(i);
             }
         }
 
-        int findUP(int node){
+        int findUP(int node) {
             if(node == parent.get(node)) return node;
             int up = findUP(parent.get(node));
             parent.set(node, up);
             return up;
         }
 
-        void unionBySize(int u, int v){
+        void unionBySize(int u, int v) {
             int pu = findUP(u), pv = findUP(v);
             
             if(pu == pv) return;
@@ -32,10 +32,10 @@ class Solution {
         }
     }
 
-    public static int makeConnected(int n, int[][] connections){
+    public static int makeConnected(int n, int[][] connections) {
         DisjointSet ds = new DisjointSet(n);
         int m = connections.length, extra = 0;
-        for(int i=0; i<m; i++) {
+        for(int i=0; i<m; i++){
             int u = connections[i][0], v = connections[i][1];
             if(ds.findUP(u) == ds.findUP(v)) extra++;
             else ds.unionBySize(u, v);
