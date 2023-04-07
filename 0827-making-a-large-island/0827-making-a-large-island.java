@@ -46,54 +46,53 @@ class Solution {
         return (i>=0 && i<n && j>=0 && j<n); // It Lies inside the grid!
     }
     
-}
+    static class DisJointSet {
+        protected int[] parent;
+        protected int[] rank;
+        protected int[] size;
+        protected int length;
 
-public class DisJointSet {
-    protected int[] parent;
-    protected int[] rank;
-    protected int[] size;
-    protected int length;
-
-    DisJointSet(int n) {
-        this.parent = new int[n + 1];
-        this.rank = new int[n + 1];
-        this.size = new int[n + 1];
-        this.length = n + 1;
-        for(int i=0; i<=n; i++){
-            parent[i] = i;
-            size[i] = 1;
+        DisJointSet(int n) {
+            this.parent = new int[n + 1];
+            this.rank = new int[n + 1];
+            this.size = new int[n + 1];
+            this.length = n + 1;
+            for(int i=0; i<=n; i++){
+                parent[i] = i;
+                size[i] = 1;
+            }
         }
-    }
 
-    public int findUParent(int node) {
-        if (node == parent[node]) return node;
-        return parent[node] = findUParent(parent[node]); // path compression
-    }
-
-    public void unionByRank(int u, int v) {
-        int ultimateU = findUParent(u);
-        int ultimateV = findUParent(v);
-        if(ultimateV == ultimateU) return; //is both are same compenent
-        if(rank[ultimateU] < rank[ultimateV])
-            parent[ultimateU] = ultimateV;
-        else if(rank[ultimateV] < rank[ultimateU])
-            parent[ultimateV] = ultimateU;
-        else{
-            parent[ultimateU] = ultimateV;
-            rank[ultimateV]++;
+        public int findUParent(int node) {
+            if(node == parent[node]) return node;
+            return parent[node] = findUParent(parent[node]); // path compression
         }
-    }
 
-    public void unionBySize(int u, int v) {
-        int ultimateU = findUParent(u);
-        int ultimateV = findUParent(v);
-        if(ultimateV == ultimateU) return;
-        if(size[ultimateU] < size[ultimateV]){
-            parent[ultimateU] = ultimateV;
-            size[ultimateV] += size[ultimateU];
-        }else{
-            parent[ultimateV] = ultimateU;
-            size[ultimateU] += size[ultimateV];
+        public void unionByRank(int u, int v) {
+            int ultimateU = findUParent(u);
+            int ultimateV = findUParent(v);
+            if(ultimateV == ultimateU) return; //is both are same compenent
+            if(rank[ultimateU] < rank[ultimateV])
+                parent[ultimateU] = ultimateV;
+            else if(rank[ultimateV] < rank[ultimateU])
+                parent[ultimateV] = ultimateU;
+            else{
+                parent[ultimateU] = ultimateV;
+                rank[ultimateV]++;
+            }
+        }
+
+        public void unionBySize(int u, int v) {
+            int ultimateU = findUParent(u);
+            int ultimateV = findUParent(v);
+            if(ultimateV == ultimateU) return;
+            if(size[ultimateU] < size[ultimateV]){
+                parent[ultimateU] = ultimateV;
+                size[ultimateV] += size[ultimateU];
+            }else{
+                parent[ultimateV] = ultimateU;
+                size[ultimateU] += size[ultimateV];
+            }
         }
     }
 }
