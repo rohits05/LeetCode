@@ -1,16 +1,27 @@
 class Solution {
-    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        int width = obstacleGrid[0].length;
+    public int uniquePathsWithObstacles(int[][] dp) {
+        int m = dp.length, n = dp[0].length;
+        int prev[] = new int[n]; // Space OpTimization | O(MxN) | O(N)
         
-        int[] path = new int[width];
-        path[0] = 1;
-        for(int[] row: obstacleGrid){
-            for(int j=0; j<width; j++){
-                if(row[j] == 1) path[j] = 0;
-                else if(j > 0) path[j] += path[j - 1];
+        for(int i=0; i<m; i++){
+            int curr[] = new int[n];
+            
+            for(int j=0; j<n; j++){
+                if(dp[i][j] == 1) curr[j] = 0; // Real - Twitch!
+                
+                // As Similar to Unique paths I
+                else if(i == 0 && j == 0) curr[j] = 1;
+                else{
+                    int up = 0, left =0; // movements
+                    if(i > 0) up = prev[j]; // checkin' valid moves
+                    if(j > 0) left = curr[j-1];
+
+                    curr[j] = up + left;
+                }
             }
+            prev = curr;
         }
-        
-        return path[width - 1];
-   }
+
+        return prev[n-1]; // The final grid path 1
+    }
 }
