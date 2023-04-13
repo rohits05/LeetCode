@@ -19,7 +19,7 @@ class Solution {
             prev = cur;
         }
         
-        int res = Integer.MAX_VALUE;
+        int res = prev[0];
         for(int j=0; j<m; j++) res = Math.min(res, prev[j]);
         return res;
     }
