@@ -8,7 +8,7 @@ class Solution {
         return subsetSumTarget(arr, N, target);
     }
     
-    // JusT Subset Sum Logic !!
+    // JusT Subset Sum Logic ~ Space OpTimizeD !!
     static boolean subsetSumTarget(int arr[], int N, int sum) {
        boolean[] prev = new boolean[N+1];
         Arrays.fill(prev, true);
