@@ -20,7 +20,6 @@ class MyQueue {
     public boolean empty() {
         return queue.isEmpty();
     }
-
 }
 
 /**
