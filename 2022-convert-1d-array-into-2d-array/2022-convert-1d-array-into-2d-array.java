@@ -1,0 +1,15 @@
+class Solution {
+    public int[][] construct2DArray(int[] original, int m, int n) {
+        if(original.length != m*n) return new int[0][0];
+        
+        int res[][] = new int[m][n];
+        int r = 0, c = 0;
+        for(int i=0; i<original.length; i++){
+            res[r][c] = original[i];
+            
+            if(c == n-1){ c =0; r++; }
+            else c++;
+        }
+        return res;
+    }
+}
