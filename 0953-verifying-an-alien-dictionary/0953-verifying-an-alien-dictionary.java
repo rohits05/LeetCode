@@ -1,17 +1,24 @@
-class Solution {
+class Solution {  
     public boolean isAlienSorted(String[] words, String order) {
-        Map<Character,Integer> map = new HashMap<>();
-        int i = 0;
-        for(char ch: order.toCharArray()) map.put(ch,i++);
+        String prev = words[0];
         
-        for(int k=0; k<words.length; k++){
-            char[] ss = words[k].toCharArray();
-            for(int j=0; j<ss.length; j++) ss[j] = (char)(map.get(ss[j])+97);
-            words[k] = new String(ss);
+        for(int i=1; i<words.length; i++){
+            if(compare(words[i], prev, order) < 0) return false;
+            prev = words[i];
         }
         
-        String[] beforeSort = words.clone();
-        Arrays.sort(words);
-        return Arrays.toString(beforeSort).equals(Arrays.toString(words));
+        return true;
+    }
+    
+    public int compare(String s1, String s2, String order) {
+        int n = Math.min(s1.length(), s2.length());
+        
+        for(int i=0; i<n; i++){
+            int index1 = order.indexOf(s1.charAt(i)),
+            index2 = order.indexOf(s2.charAt(i));
+            if(index1 != index2) return Integer.compare(index1, index2);
+        }
+        
+        return Integer.compare(s1.length(), s2.length());
     }
 }
