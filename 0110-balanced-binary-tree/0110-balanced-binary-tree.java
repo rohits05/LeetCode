@@ -21,8 +21,7 @@ class Solution {
     int dfsHeight(TreeNode root){
         if(root == null) return 0;
         
-        int lH = dfsHeight(root.left);
-        int rH = dfsHeight(root.right);
+        int lH = dfsHeight(root.left), rH = dfsHeight(root.right);
         
         if(lH == -1 || rH == -1) return -1;
         if(Math.abs(lH - rH) > 1) return -1;
