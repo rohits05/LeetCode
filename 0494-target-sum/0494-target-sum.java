@@ -1,5 +1,5 @@
 class Solution {
-    public int findTargetSumWays(int[] nums, int target) {
+    public int findTargetSumWays(int[] nums, int target) { // S1 - S2 = D
         return countPartitions(nums.length, target, nums);
     }
     
@@ -12,19 +12,18 @@ class Solution {
     	    prev[0] = 1;
     	    if(sum >= arr[0]) prev[arr[0]] = 1;
 	    }
-	      for(int i=1; i<n; i++){
-	          int cur[] = new int[sum+1];
-	          for(int t=0; t<=sum; t++){
-                  int notTaken = prev[t];
-                  int taken = 0;
+	    for(int i=1; i<n; i++){
+	        int cur[] = new int[sum+1];
+	        for(int t=0; t<=sum; t++){
+                int notTaken = prev[t];
+                int taken = 0;
                   
-                  if(arr[i] <= t) taken = prev[t-arr[i]];
-                  cur[t] = (notTaken + taken);
+                if(arr[i] <= t) taken = prev[t-arr[i]];
+                cur[t] = (notTaken + taken);
 	          }
-	          prev = cur;
+	         prev = cur;
 	      }
-	      
-	      return prev[sum];
+        return prev[sum];
     } 
     
     
