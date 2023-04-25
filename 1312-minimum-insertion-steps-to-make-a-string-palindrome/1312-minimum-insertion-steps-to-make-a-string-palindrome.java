@@ -2,7 +2,7 @@ class Solution {
     public int minInsertions(String s1) {
         String s2 = "";
         int x =s1.length();
-        for(int i=x-1; i>=0; i--) s2 += s1.charAt(i);
+        for(int i=x-1; i>=0; i--) s2 += s1.charAt(i); // S2 = rev(S1) for L.P.S
         
         int dp[] = new int[x+1];
         
@@ -15,6 +15,6 @@ class Solution {
             dp = cur;
         }
         
-        return (s1.length() - dp[x]); // a c p c a
+        return (x - dp[x]); // a c p c a
     }
 }
