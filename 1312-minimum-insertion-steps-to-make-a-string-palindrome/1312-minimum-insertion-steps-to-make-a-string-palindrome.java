@@ -1,19 +1,24 @@
 class Solution {
-    int solve(String s, int dp[][], int i, int j) {
-        if(i >= j) return 0;
-        if(dp[i][j] != -1) return dp[i][j];
-                  
-        if(s.charAt(i) == s.charAt(j))
-            return dp[i][j] = solve(s, dp, i+1, j-1);
-        
-        return dp[i][j] = 1 + Math.min(solve(s, dp, i+1, j), solve(s, dp, i, j-1));
+    public int minInsertions(String s) {
+        return (s.length() - lps(s)); // a c p c a
     }
     
-    public int minInsertions(String s) {
-        int n = s.length();
-        int dp[][] = new int[n+1][n+1];
+    public int lps(String s1){
+        String s2 = "";
+        int x =s1.length();
+        for(int i=x-1; i>=0; i--) s2 += s1.charAt(i);
         
-        for(int[] d: dp) Arrays.fill(d, -1);
-        return solve(s, dp, 0, n-1);
+        int dp[] = new int[x+1];
+        
+        for(int i=1; i<=x; i++){
+            int cur[] = new int[x+1];
+            for(int j=1; j<=x; j++){
+                if(s1.charAt(i-1) == s2.charAt(j-1)) cur[j] = 1 + dp[j-1];
+                else cur[j] = Math.max(dp[j], cur[j-1]);
+            }
+            dp = cur;
+        }
+        
+        return dp[x];
     }
 }
