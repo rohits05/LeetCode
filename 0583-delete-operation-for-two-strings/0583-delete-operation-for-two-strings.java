@@ -1,21 +1,22 @@
 class Solution {
     public int minDistance(String word1, String word2) {
-        int len1 = word1.length(), len2 = word2.length();
-        if(len1 == 0) return len2;
-        if(len2 == 0) return len1;
+        // del = n - lcs & ins = m - lcs i.e total_op = n + m - 2 * lcs!
+        return (word1.length() + word2.length() - 2 * lcs(word1, word2)); // 
+    }
+    
+    public int lcs(String s1, String s2){
+        int x =s1.length(), y = s2.length();
+        int[] dp = new int[y+1];
         
-        int[][] dp = new int[len1 + 1][len2 + 1];
-        for(int i=0; i<=len1; i++) dp[i][0] = i;
-        for(int j=0; j<=len2; j++) dp[0][j] = j;
-            
-        for(int i=1; i<=len1; i++){
-            for(int j=1; j<=len2; j++){
-                if(word1.charAt(i - 1) == word2.charAt(j - 1)) 
-                    dp[i][j] = dp[i - 1][j - 1];
-                else
-                    dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1] + 2, dp[i - 1][j] + 1), dp[i][j - 1] + 1);
-            }
+        for(int i=1; i<=x; i++){
+            int[] curr = new int[y+1];
+            for(int j=1; j<=y; j++){
+                
+                   if(s1.charAt(i-1) == s2.charAt(j-1)) curr[j] = 1 + dp[j-1];
+                   else curr[j] = Math.max(dp[j],curr[j-1]);
+                }
+            dp = curr;
         }
-        return dp[len1][len2];
+        return dp[y];
     }
 }
