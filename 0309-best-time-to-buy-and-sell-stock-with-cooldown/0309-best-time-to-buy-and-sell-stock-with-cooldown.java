@@ -1,15 +1,16 @@
 class Solution {
-    public int maxProfit(int[] prices) {
-        if(prices == null || prices.length < 2) return 0;
-        int len = prices.length;
-        int[] sell = new int[len]; 
-        int[] cooldown = new int[len];
-        sell[1] = prices[1] - prices[0];
+    public int maxProfit(int[] A) {
+        int curbuy =0, cursell =0;
+        int nextbuy =0, nextsell =0;
+        int coolbuy =0, n =A.length;
+    
+        for(int i=n-1; i>=0; i--){ 
+            cursell = Math.max(A[i] + coolbuy, nextsell);
+            curbuy = Math.max(nextsell - A[i], nextbuy);
+             
+            coolbuy = nextbuy; nextbuy = curbuy; nextsell = cursell; 
+         }
         
-        for(int i=2; i<prices.length; i++){
-            cooldown[i] = Math.max(sell[i - 1], cooldown[i - 1]);
-            sell[i] = prices[i] - prices[i - 1] + Math.max(sell[i - 1], cooldown[i - 2]);
-        }
-        return Math.max(sell[len - 1], cooldown[len - 1]);
+        return curbuy;
     }
 }
