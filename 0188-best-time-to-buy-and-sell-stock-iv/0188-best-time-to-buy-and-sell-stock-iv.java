@@ -21,11 +21,12 @@ class Solution {
         for(int i=N-1; i>=0; i--){
             for(int j=2*K-1; j>=0; j--){
                 
-                if(j % 2 == 0) c[j] = Math.max(p[j+1] - A[i], p[j]); // Buy 1
+                if(j % 2 == 0) c[j] = Math.max(p[j+1] - A[i], p[j]); // Buy !!
                 else c[j] = Math.max(A[i] + p[j+1], p[j]);
             }
             p = c;
         }
+        
         return p[0];
     }
 }
