@@ -4,7 +4,7 @@ class Solution {
     }
     
     public boolean wordBreak(String s, List<String> wordDict) {
-        if (isNullOrEmpty(s) || wordDict == null) return false;
+        if(isNullOrEmpty(s) || wordDict == null) return false;
         
         final int cols = s.length() + 1;
         int[] dp = new int[cols];
