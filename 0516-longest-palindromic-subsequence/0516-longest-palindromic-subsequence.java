@@ -14,7 +14,7 @@ class Solution {
                 if(s.charAt(i-1) == t.charAt(j-1)) c[j] = 1 + p[j-1];
                 else c[j] = Math.max(p[j], c[j-1]);
             }
-            p =c;
+            p = c;
         }
 
         return p[n];
