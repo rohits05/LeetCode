@@ -15,8 +15,7 @@ class Solution {
             if(!s2.contains(n)) lis1.add(n);
         
         for(int n: s2)
-            if(!s1.contains(n))
-                lis2.add(n);
+            if(!s1.contains(n)) lis2.add(n);
 
         ans.add(lis1);
         ans.add(lis2);
