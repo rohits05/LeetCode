@@ -7,7 +7,7 @@ var once = function(fn) {
     return function(...args){
         if(!flag){
             flag = true;
-            return  fn(...args);
+            return fn(...args);
         } else return undefined;
     }
 };
