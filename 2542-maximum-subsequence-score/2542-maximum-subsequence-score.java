@@ -1,7 +1,6 @@
 class Solution {
     class Pair {
-        private Long first;
-        private Long second;
+        private Long first, second;
 
         Pair(long first, long second) {
             this.first = first;
@@ -27,7 +26,7 @@ class Solution {
             pq.add(vp[i].second);
             if(pq.size() >= k) sum -= pq.poll();
         }
-        return ans;
         
+        return ans;
     }
 }
