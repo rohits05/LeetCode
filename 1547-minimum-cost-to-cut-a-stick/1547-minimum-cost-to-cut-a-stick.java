@@ -1,6 +1,6 @@
 class Solution {
     public int minCost(int n, int[] cuts) {
-       int c = cuts.length;
+       int c =cuts.length;
        Arrays.sort(cuts);
        ArrayList<Integer> arr = new ArrayList<>();
        for(int i=0; i<c; i++) arr.add(cuts[i]);
