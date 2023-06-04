@@ -15,11 +15,12 @@ class Solution {
         
 // 	    return result;
         
-        int[][] arr = new int[n][];
+        int[][] arr = new int[n][]; // R - wise !!
         
         for(int i=0; i<n; i++){
             int[] row = new int[i + 1];
-            row[0] = 1; row[i] = 1;
+            row[0] = 1; row[i] = 1; // start ptr
+            
             for(int j=1; j<i; j++)
                 row[j] = arr[i - 1][j - 1] + arr[i - 1][j];
             arr[i] = row;
