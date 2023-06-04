@@ -5,7 +5,7 @@ class Solution {
         Set<Integer> col = new HashSet<>();
         
         for(int i=0; i<n; i++){ // Finding specific R & C with 0's!
-           for(int j=0; j<m; j++){ // O(N2)
+           for(int j=0; j<m; j++){
                if(mat[i][j] == 0){
                     row.add(i); 
                     col.add(j);
