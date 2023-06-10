@@ -1,12 +1,13 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        // Moore Voting Algo!
-        int els =0, cnt =0;
-        for(int item: nums){
-            if(cnt == 0) els = item;
-            if(item == els) cnt +=1;
-            else cnt -=1;
+        // Moore's Voting Algo !!
+        int el =0, cnt =0;
+        for(int items: nums){
+            if(cnt == 0) el =items; // fill up
+            if(el == items) cnt +=1; // match & inc
+            else cnt -=1; // disagree
         }
-        return els;
+        
+        return el;
     }
 }
