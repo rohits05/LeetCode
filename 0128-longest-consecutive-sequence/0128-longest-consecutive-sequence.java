@@ -3,7 +3,7 @@ class Solution {
         int res =0;
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         
-        for(int n: nums) {
+        for(int n: nums){
             if(!map.containsKey(n)){
                 int left = (map.containsKey(n-1)) ? map.get(n-1) : 0;
                 int right = (map.containsKey(n+1)) ? map.get(n+1) : 0;
