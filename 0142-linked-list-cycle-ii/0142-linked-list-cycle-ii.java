@@ -13,8 +13,7 @@ public class Solution {
     public ListNode detectCycle(ListNode head) {
         if(head == null || head.next == null) return null;
         
-        ListNode oneJump = head;
-        ListNode twoJump = head;
+        ListNode oneJump = head, twoJump = head;
         ListNode entry = head;
         
         while(twoJump.next != null && twoJump.next.next != null){
