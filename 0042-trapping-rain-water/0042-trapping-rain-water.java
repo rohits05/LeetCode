@@ -6,8 +6,7 @@ class Solution {
         int level =0, water =0, index =0;
         
         while(n > 0){
-            int lower = height[index] < height[index + n] 
-                ? height[index++] : height[index + n];
+            int lower = height[index] < height[index + n] ? height[index++] : height[index + n];
             
 			if(lower > level) level = lower;
 			water += level - lower; n--;
