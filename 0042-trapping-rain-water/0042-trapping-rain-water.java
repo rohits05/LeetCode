@@ -11,6 +11,7 @@ class Solution {
 			if(lower > level) level = lower;
 			water += level - lower; n--;
         }
+        
         return water;
     }
 }
