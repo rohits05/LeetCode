@@ -11,8 +11,8 @@ class Solution {
             ans.add(new ArrayList<>(d));
             return;
         }
-        int n =arr.length;
         
+        int n =arr.length;
         for(int i=idx; i<n; i++){
             if(i>idx && arr[i]==arr[i-1]) continue;
             if(arr[i] > t) break;
