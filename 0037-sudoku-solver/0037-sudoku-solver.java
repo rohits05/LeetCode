@@ -1,36 +1,37 @@
 class Solution {
-     public void solveSudoku(char[][] board) {
-        if(board.length == 0) return;
-        dfs(board);
+    public void solveSudoku(char[][] board) {
+        solve(board, 0, 0);
     }
-    
-    private boolean isSafe(char[][] board,int i,int j,int c){
-        for(int p=0; p<9; p++){
-            if(board[p][j] == c) return false;
+
+    private boolean solve(char[][] board, int row, int col) {
+        int n =board.length, m=board[0].length;
+        if(row == n) return true;
+        if(col == m) return solve(board, row + 1, 0);
+        if(board[row][col] != '.') return solve(board, row, col + 1);
+        
+        for(char num='1'; num<='9'; num++){
+            if(isValidPlacement(board, row, col, num)){
+                board[row][col] = num;
+                if(solve(board, row, col + 1)) return true;
+                board[row][col] = '.';
+            }
         }
-        for(int p=0; p<9; p++){
-            if(board[i][p] == c) return false;
+        
+        return false;
+    }
+
+    private boolean isValidPlacement(char[][] board, int row, int col, char num) {
+        int n =board.length;
+        for(int i=0; i<n; i++){
+            if(board[i][col] == num) return false;
+            if(board[row][i] == num) return false;
+ 
+            int subgridRow = 3 * (row / 3) + i / 3;
+            int subgridCol = 3 * (col / 3) + i % 3;
+ 
+            if(board[subgridRow][subgridCol] == num) return false;
         }
 
-        int row = i-i%3, col = j-j%3;
-        for(int p=row; p<row+3; p++){
-            for(int q=col; q<col+3; q++){
-                if(board[p][q] == c) return false;
-        }}
-        return true;
-    }
-    
-    public boolean dfs(char[][] board){
-        for(int i=0; i<9; i++){
-            for(int j=0; j<9; j++){
-                if(board[i][j] == '.'){
-                    for(char k='1'; k<='9'; k++){
-                        if(isSafe(board, i, j, k)){ board[i][j] = k;
-                            if(dfs(board)) return true;
-                            else board[i][j]='.';
-                        }}
-             return false;
-         }}}
         return true;
     }
 }
