@@ -1,11 +1,12 @@
 class Solution {
     public boolean isValid(String s) {
+        int len =s.length();
         Stack<Character> stack = new Stack<>();
         
-        for(int i=0; i<s.length(); i++) {
+        for(int i=0; i<len; i++){
             char a = s.charAt(i);
-            if(a == '(' || a == '[' || a == '{')  stack.push(a);
             
+            if(a == '(' || a == '[' || a == '{')  stack.push(a);
             else if(stack.empty())  return false;
             else if(a == ')' && stack.pop() != '(')  return false;
             else if(a == ']' && stack.pop() != '[')  return false;
