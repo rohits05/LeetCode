@@ -14,15 +14,15 @@ class Solution {
 //            }
 //            return true;
 //        }
-        
-        if(a.length() != b.length()) return false;
-        
+        int n =a.length(), m =b.length();
+        if(n != m) return false;
         else{
             int cnt[] = new int[26];
-            for(int i=0; i<a.length(); i++) cnt[a.charAt(i) - 'a']++;
-            for(int i=0; i<b.length(); i++) cnt[b.charAt(i) - 'a']--;
+            int len =cnt.length;
+            for(int i=0; i<n; i++) cnt[a.charAt(i) - 'a']++;
+            for(int i=0; i<m; i++) cnt[b.charAt(i) - 'a']--;
             
-            for(int i=0; i<cnt.length; i++) if(cnt[i] != 0) return false;
+            for(int i=0; i<len; i++) if(cnt[i] != 0) return false;
         }
         return true;
     }
