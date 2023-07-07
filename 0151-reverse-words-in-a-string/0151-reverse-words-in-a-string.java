@@ -21,9 +21,8 @@ class Solution {
         StringBuilder dev = new StringBuilder();
         
         int n = words.length;
-        for(int i=n-1; i>=0; i--) {
+        for(int i=n-1; i>=0; i--)
             if(words[i] != "") dev.append(words[i].trim() + " ");
-        }
 
         return dev.toString().trim();
     }
