@@ -16,9 +16,7 @@ class Solution {
                     count[i] = count[j];
                 }
 
-                else if(arr[i] > arr[j] && dp[i] == dp[j] + 1){
-                    count[i]+=count[j];
-                }
+                else if(arr[i] > arr[j] && dp[i] == dp[j] + 1) count[i]+=count[j];
             }
 
             maxi = Math.max(maxi, dp[i]);
@@ -26,7 +24,6 @@ class Solution {
 
         int ans =0;
         for(int i=0; i<N; i++) if(dp[i] == maxi) ans += count[i];
-
         return ans;
     }
 }
