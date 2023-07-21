@@ -2,10 +2,10 @@ class Solution {
     public int maxPoints(int[][] points) {
         int max = 0;
         
-        for(int[] x :points){
-            Map<Double,Integer> map= new HashMap<>();
+        for(int[] x: points){
+            Map<Double, Integer> map= new HashMap<>();
             for(int[] y: points){
-                if(x==y) continue;
+                if(x == y) continue;
                 
                 double slope = 0;
                 if(y[0] - x[0] == 0) slope = Double.POSITIVE_INFINITY; 
@@ -15,6 +15,7 @@ class Solution {
                 max = Math.max(max, map.get(slope));
             }
         }
+        
         return max+1;
     }
 }
