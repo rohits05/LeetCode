@@ -2,8 +2,8 @@ class Solution {
     int[][] dir = {{-2,1},{-1,2},{1,2},{2,1},{2,-1},{1,-2},{-1,-2},{-2,-1}};
     public double knightProbability(int n, int k, int row, int column) {
         double[][] curr = new double[n][n];
-        curr[row][column] = 1;
         double[][] next = new double[n][n];
+        curr[row][column] = 1;
         
         for(int m=1; m<=k; m++){
             for(int i=0; i<n; i++){
