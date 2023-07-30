@@ -10,6 +10,7 @@ class Solution {
     
     public int totalNQueens(int n) {
        boolean [][] board = new boolean[n][n]; 
+        
        return NQueens(board, 0);
     }
     
