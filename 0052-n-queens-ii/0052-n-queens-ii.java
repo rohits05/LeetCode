@@ -1,5 +1,5 @@
 class Solution {
-    public boolean isItSafe(boolean [][] board,int row,int col){
+    public boolean isItSafe(boolean [][] board,int row,int col) {
         for(int i=row; i>=0; i--) if(board[i][col]) return false;
         
         for(int i=row, j=col; i>=0 & j>=0; i--, j--) if(board[i][j]) return false;
@@ -13,7 +13,7 @@ class Solution {
        return NQueens(board, 0);
     }
     
-    public int NQueens(boolean [][] board, int row){
+    public int NQueens(boolean [][] board, int row) {
         int n = board.length, count = 0;
         if(row == n) return 1;
 
