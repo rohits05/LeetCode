@@ -24,9 +24,9 @@ class Solution {
         }
         
         if(memo[i][j] != -1) return memo[i][j];
-        int ans = (s1.charAt(i) == s2.charAt(j)) ? recur(i + 1, j + 1)
-                : Math.min(recur(i + 1, j) + s1.charAt(i),
-                  recur(i, j + 1) + s2.charAt(j));
+        int ans = (s1.charAt(i) == s2.charAt(j)) ? recur(i+1, j+1)
+                : Math.min(recur(i+1, j) + s1.charAt(i),
+                  recur(i, j+1) + s2.charAt(j));
         memo[i][j] = ans;
         
         return ans;
