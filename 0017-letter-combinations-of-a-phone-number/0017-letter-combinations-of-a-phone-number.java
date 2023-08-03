@@ -10,10 +10,12 @@ class Solution {
     }
 
     private void combination(String prefix, String digits, int offset, List<String> ret) {
-        if(offset >= digits.length()){
+        int n = digits.length();
+        if(offset >= n){
             ret.add(prefix);
             return;
         }
+        
         String letters = KEYS[(digits.charAt(offset) - '0')];
         int len = letters.length();
         for(int i=0; i<len; i++)
