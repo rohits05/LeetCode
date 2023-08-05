@@ -15,7 +15,7 @@
  */
 class Solution {
     public List<TreeNode> generateTrees(int n) {
-        List<TreeNode>[][] dp = new  List[10][10];
+        List<TreeNode>[][] dp = new List[10][10];
         return helper(1, n , dp);
     }
     
@@ -43,6 +43,6 @@ class Solution {
             }
         }
         
-        return dp[start][end]= list;
+        return dp[start][end] = list;
     }
 }
