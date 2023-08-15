@@ -20,7 +20,6 @@ class Solution {
         }
         
         long leftCount = countWays(left), rightCount = countWays(right);
-        
         return (int) ((comb(nums.size() - 1, left.size()) % MOD) 
                     * (leftCount % MOD) % MOD * (rightCount % MOD) % MOD);
     }
