@@ -25,7 +25,6 @@ class Solution {
             ans %= mod;
         }
         
-        
         return dp[ind][fuel]  = ans % mod;
     }
 }
