@@ -4,10 +4,10 @@ class Solution {
     
         for(int i=0; i<n; i++){
             if(nums[i] != 0){
-                // int temp = nums[i];
-                // nums[i] = nums[nonZ];
-                // nums[nonZ] = temp;
-                swap(nums, i, nonZ);
+                int temp = nums[i];
+                nums[i] = nums[nonZ];
+                nums[nonZ] = temp;
+                // swap(nums, i, nonZ);
                 nonZ++;
             }
         }
