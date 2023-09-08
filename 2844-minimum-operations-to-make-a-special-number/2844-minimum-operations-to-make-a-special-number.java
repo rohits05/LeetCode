@@ -13,7 +13,7 @@ class Solution {
         for(int i=n-1; i>=0; i--){
             char ch = num.charAt(i);
             if(ch == '0') containsZero = true;
-            if(map.containsKey(ch) && set.contains(map.get(ch))) return n-i-2;
+            if(map.containsKey(ch) && set.contains(map.get(ch))) return (n-i-2);
             set.add(ch);
         }
         
