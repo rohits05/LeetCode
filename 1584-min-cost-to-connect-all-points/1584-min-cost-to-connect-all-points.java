@@ -1,11 +1,11 @@
 class Solution {
     int set[];
-    private int findParent(int u){
+    private int findParent(int u) {
         if(set[u] == u) return u;
         return set[u] = findParent(set[u]);
     }
     
-    private void union(int a, int b){
+    private void union(int a, int b) {
         int p1 = findParent(a), p2 = findParent(b);
         if(p1 != p2) set[b] = p1;
         set[p2] = p1;
