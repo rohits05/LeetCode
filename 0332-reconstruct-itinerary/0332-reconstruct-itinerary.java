@@ -4,7 +4,8 @@ class Solution {
 
     public List<String> findItinerary(List<List<String>> tickets) { 
         for(List<String> ticket: tickets){ 
-            String start = ticket.get(0); String end = ticket.get(1);
+            String start = ticket.get(0); 
+            String end = ticket.get(1);
             PriorityQueue<String> destinations = map.getOrDefault(start, new PriorityQueue<>());
             destinations.offer(end);
             map.put(start, destinations);
