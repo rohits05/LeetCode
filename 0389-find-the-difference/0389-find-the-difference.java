@@ -3,7 +3,6 @@ class Solution {
         char c = 0;
         for(char cs : s.toCharArray()) c ^= cs;
         for(char ct : t.toCharArray()) c ^= ct;
-        
         return c;
     }
 }
