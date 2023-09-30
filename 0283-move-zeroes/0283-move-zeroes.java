@@ -7,15 +7,8 @@ class Solution {
                 int temp = nums[i];
                 nums[i] = nums[nonZ];
                 nums[nonZ] = temp;
-                // swap(nums, i, nonZ);
                 nonZ++;
             }
         }
-    }
-    
-    private void swap(int arr[], int i, int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 }
