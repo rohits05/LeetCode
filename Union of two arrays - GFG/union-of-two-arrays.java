@@ -54,7 +54,7 @@ class Solution{
     public static int doUnion(int a[], int n, int b[], int m) 
     {
         //Your code here
-        Set <Integer> union = new HashSet <>();
+        Set <Integer> union = new HashSet<>();
         
         for(Integer e : a) union.add(e);
         for(Integer e : b) union.add(e);
