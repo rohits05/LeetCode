@@ -1,4 +1,3 @@
 # Write your MySQL query statement below
-select sD.id from Weather as fD, Weather as sD
-where datediff(sD.recordDate, fD.recordDate)=1 and sD.temperature > fD.temperature;
--- order by id asc;
+select w2.id from Weather as w1, Weather as w2
+where datediff(w2.recordDate, w1.recordDate) = 1 and w2.temperature > w1.temperature;
