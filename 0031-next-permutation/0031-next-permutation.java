@@ -3,7 +3,7 @@ class Solution {
         int n = nums.length;
         if(nums == null || n <= 1) return;
         
-        int i  =n-2;
+        int i = n-2;
         while(i >= 0 && nums[i] >= nums[i + 1]) i--; //break-point
         
         if(i >= 0){ // caught 
