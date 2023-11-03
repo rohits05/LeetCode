@@ -1,12 +1,12 @@
 class Solution {
     public void nextPermutation(int[] nums) {
-        int n =nums.length;
+        int n = nums.length;
         if(nums == null || n <= 1) return;
         
-        int i =n-2;
-        while(i >= 0 && nums[i] >= nums[i + 1]) i--;
+        int i  =n-2;
+        while(i >= 0 && nums[i] >= nums[i + 1]) i--; //break-point
         
-        if(i >= 0){
+        if(i >= 0){ // caught 
             int j = n-1;
             while(nums[j] <= nums[i]) j--;
             swap(nums, i, j);
