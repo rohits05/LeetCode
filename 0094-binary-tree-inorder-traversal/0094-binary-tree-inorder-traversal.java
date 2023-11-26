@@ -15,34 +15,34 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        // recursive Approach !!
-        // List<Integer> in = new LinkedList<Integer>();
-        // if(root == null) return in;  # 1
+        // Morris - recursive Approach !!
+        List<Integer> in = new LinkedList<Integer>();
+        if(root == null) return in;  
         
         // inHelper(root, in);
-        // in.addAll(inorderTraversal(root.left)); # 1
-        // in.add(root.val); # 1
-        // in.addAll(inorderTraversal(root.right)); # 1
-        // return in;
+        in.addAll(inorderTraversal(root.left)); 
+        in.add(root.val); 
+        in.addAll(inorderTraversal(root.right)); 
+        return in;
          
         // Iterative Approach !!
-        List<Integer> trav = new ArrayList<Integer>();
-        Stack<TreeNode> pickup = new Stack<TreeNode>();
-        TreeNode node = root;
+//         List<Integer> trav = new ArrayList<Integer>();
+//         Stack<TreeNode> pickup = new Stack<TreeNode>();
+//         TreeNode node = root;
         
-        while(true){
-            if(node != null){
-                pickup.push(node);
-                node = node.left;    
-            }else{
-                if(pickup.isEmpty()) break;
-                node = pickup.pop();
-                trav.add(node.val);
-                node = node.right;
-            }
-        }
+//         while(true){
+//             if(node != null){
+//                 pickup.push(node);
+//                 node = node.left;    
+//             }else{
+//                 if(pickup.isEmpty()) break;
+//                 node = pickup.pop();
+//                 trav.add(node.val);
+//                 node = node.right;
+//             }
+//         }
         
-        return trav;       
+//         return trav;       
     }
     
     public void inHelper(TreeNode root, List<Integer> in){
