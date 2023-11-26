@@ -15,31 +15,31 @@
  */
 class Solution { 
     public List<Integer> preorderTraversal(TreeNode root) {
-        // Recursive Approach !!
-        // List<Integer> pre = new LinkedList<Integer>(); #1,2
-        // if(root == null) return pre; #1
-        // preHelper(root, pre); #2
+        // Morris - Recursive Approach !!
+        List<Integer> pre = new LinkedList<Integer>();
+        if(root == null) return pre; 
+        // preHelper(root, pre); 
         
-        // pre.add(root.val);#1
-        // pre.addAll(preorderTraversal(root.left)); #1
-        // pre.addAll(preorderTraversal(root.right)); #1
-        // return pre;  #1,2
+        pre.add(root.val);
+        pre.addAll(preorderTraversal(root.left));
+        pre.addAll(preorderTraversal(root.right));
+        return pre;  
                    
         // Iterative Approach !!
-        List<Integer> trav = new ArrayList<Integer>();    
-        if(root == null) return trav;
+//         List<Integer> trav = new ArrayList<Integer>();    
+//         if(root == null) return trav;
      
-        Stack<TreeNode> pickup = new Stack<TreeNode>();
-        pickup.push(root);
+//         Stack<TreeNode> pickup = new Stack<TreeNode>();
+//         pickup.push(root);
         
-        while(!pickup.isEmpty()){
-           root = pickup.pop();
-           trav.add(root.val);
-           if(root.right != null) pickup.push(root.right);
-           if(root.left != null) pickup.push(root.left);      
-        }
+//         while(!pickup.isEmpty()){
+//            root = pickup.pop();
+//            trav.add(root.val);
+//            if(root.right != null) pickup.push(root.right);
+//            if(root.left != null) pickup.push(root.left);      
+//         }
         
-        return trav;
+//         return trav;
     }
     
     public void preHelper(TreeNode root, List<Integer> pre){
