@@ -34,6 +34,6 @@ class Solution {
         
         if(rightTail != null) return rightTail;
         else if(leftTail != null) return leftTail;
-        else  return root;
+        else return root;
     }
 }
