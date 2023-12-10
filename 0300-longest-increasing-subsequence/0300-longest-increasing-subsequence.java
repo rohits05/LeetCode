@@ -2,7 +2,6 @@ class Solution {
     public int lengthOfLIS(int[] a) {
            // Space Optimized !
 //         int n =a.length;
-//         // int dp[][] = new int[n+1][n+1];
 //         int next[] = new int[n+1]; int cur[] = new int[n+1];
         
 //         for(int i=n-1; i>=0; i--){
@@ -21,7 +20,7 @@ class Solution {
         int dp[] = new int[a.length];
         int len = 0;
         for(int num: a){
-            int i = Arrays.binarySearch(dp, 0, len, num); // 
+            int i = Arrays.binarySearch(dp, 0, len, num); // SOF
             if(i < 0) i = -(i + 1);
             
             dp[i] = num;
