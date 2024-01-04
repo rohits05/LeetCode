@@ -4,7 +4,7 @@ class Solution {
         int res[] = new int[nums.length];
         
         for(int el: nums){
-            if(el > 0) { 
+            if(el >= 0) { 
                 res[pIdx] = el;
                 pIdx += 2;
             } else { 
