@@ -22,7 +22,7 @@ class Solution {
 //         }
 //         return maxI;
         
-        // Space Opto=imization!
+        // Space OpTimization!
         int prev = nums[0], curr = nums[0];
         for(int i=1; i<n; i++){
             prev = Math.max(nums[i], prev + nums[i]);
