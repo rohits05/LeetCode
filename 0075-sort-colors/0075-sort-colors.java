@@ -1,7 +1,7 @@
 class Solution {
     public void sortColors(int[] a) {
         int n =a.length;
-        int low =0, mid =0, temp, high = n-1;
+        int low =0, mid =0, high = n-1;
         
         while(mid <= high){
             if(a[mid] == 0){
