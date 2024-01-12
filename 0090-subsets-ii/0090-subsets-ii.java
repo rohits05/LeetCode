@@ -7,8 +7,7 @@ class Solution {
         return ans;
     }
 
-    static void func(int ind, int nums[], List<Integer> d, 
-                     List<List<Integer>> ans){
+    static void func(int ind, int nums[], List<Integer> d, List<List<Integer>> ans){
          ans.add(new ArrayList<>(d)); 
         
          for(int i=ind; i<nums.length; i++){
