@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    public void helper(TreeNode root,List<Integer> post){
+    public void helper(TreeNode root, List<Integer> post){
         if(root == null) return;
         
         helper(root.left, post);
